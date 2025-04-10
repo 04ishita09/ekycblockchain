@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>User Registration</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="index-3b130adc.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+ body {
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin: 0;
+ font-family: 'Poppins', sans-serif;
+ padding: 20px;
+ }
+
+ .container-fluid {
+ display: flex;
+ justify-content: center;
+ width: 100%;
+ padding: 1rem;
+ }
+
+ h1 {
+ color: #fff;
+ margin-bottom: 20px;
+ font-size: 2rem;
+ text-align: center;
+ font-weight: 700;
+ background-clip: text;
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-color: #fff;
+ background-image: radial-gradient(at 4% 36%, rgb(12, 52, 242) 0, transparent 53%), radial-gradient(at 100% 60%, rgb(0, 0, 139) 0, transparent 50%);
+ }
+
+ .card {
+ background: rgba(255, 255, 255, 0.05);
+ border-radius: 16px;
+ backdrop-filter: blur(5px);
+ -webkit-backdrop-filter: blur(5px);
+ border: 1px solid rgba(255, 255, 255, 0.3);
+ width: 100%;
+ max-width: 500px;
+ padding: 1.5rem;
+ box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+ }
+
+ .form-control,
+ .form-select {
+ background: rgba(255, 255, 255, 0.1);
+ color: #fff;
+ border: 1px solid rgba(255, 255, 255, 0.2);
+ border-radius: 8px;
+ padding: 10px;
+ margin-bottom: 1rem;
+ font-size: 0.9rem;
+ font-weight: 400;
+ letter-spacing: 0.3px;
+ transition: all 0.3s ease;
+ }
+
+ .form-control::placeholder,
+ .form-select::placeholder {
+ color: rgba(255, 255, 255, 0.6);
+ font-weight: 400;
+ }
+
+ .form-control:focus,
+ .form-select:focus {
+ background-color: rgba(255, 255, 255, 0.15);
+ border-color: #2952e3;
+ box-shadow: 0 0 8px rgba(41, 82, 227, 0.5);
+ color: #fff;
+ }
+
+ .form-label {
+ color: #fff;
+ font-weight: 500;
+ margin-bottom: 0.5rem;
+ font-size: 0.9rem;
+ letter-spacing: 0.3px;
+ }
+
+ .btn-submit {
+ background-color: #2952e3;
+ color: white;
+ border: none;
+ padding: 10px 20px;
+ border-radius: 8px;
+ font-size: 0.95rem;
+ font-weight: 600;
+ letter-spacing: 0.3px;
+ transition: all 0.3s ease;
+ width: 100%;
+ }
+
+ .btn-submit:hover {
+ background-color: #2546bd;
+ transform: translateY(-2px);
+ }
+
+ .btn-cancel {
+ background-color: rgba(255, 77, 77, 0.8);
+ color: white;
+ border: none;
+ padding: 10px 20px;
+ border-radius: 8px;
+ font-size: 0.95rem;
+ font-weight: 600;
+ letter-spacing: 0.3px;
+ transition: all 0.3s ease;
+ width: 100%;
+ }
+
+ .btn-cancel:hover {
+ background-color: rgba(196, 61, 61, 0.9);
+ transform: translateY(-2px);
+ }
+
+ .invalid-feedback {
+ color: #ff4d4d;
+ font-size: 0.8rem;
+ margin-top: 0.25rem;
+ font-weight: 500;
+ }
+
+ .d-flex.justify-content-center.gap-3 {
+ margin-top: 1.5rem;
+ width: 100%;
+ gap: 1rem !important;
+ }
+
+ option {
+ background-color: #1a1a1a;
+ color: #fff;
+ padding: 8px;
+ }
+ </style>
+</head>
+
+<body class="gradient-bg-welcome">
+ <h1>User Registration</h1>
+ <div class="container-fluid">
+ <div class="card">
+ <form id="registrationForm" novalidate>
+ <div class="mb-3">
+ <label for="bank" class="form-label">Bank*</label>
+ <select id="bank" name="bank" class="form-select" required>
+ <option value="">-- Select --</option>
+ <option value="sbi">SBI</option>
+ <option value="hdfc">HDFC</option>
+ <option value="icici">ICICI</option>
+ </select>
+ <div class="invalid-feedback">Please select a bank</div>
+ </div>
+ <div class="mb-3">
+ <label for="givenName" class="form-label">Name*</label>
+ <input type="text" id="givenName" name="givenName" class="form-control"
+ placeholder="Enter your name" required
+ minlength="2" maxlength="20"
+ pattern="[A-Za-z ]{2,20}"
+ title="Name should be 2-20 characters long, containing only letters">
+ <div class="invalid-feedback">Name must be 2-20 characters long, letters only</div>
+ </div>
+ <div class="mb-3">
+ <label for="dob" class="form-label">Date of Birth* (Must be 18-100 years old)</label>
+ <input type="date" id="dob" name="dob" class="form-control" required>
+ <div class="invalid-feedback">You must be between 18 and 100 years old</div>
+ </div>
+ <div class="mb-3">
+ <label for="email" class="form-label">E-mail ID*</label>
+ <input type="email" id="email" name="email" class="form-control"
+ placeholder="Enter your email" required
+ pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+ title="Please enter a valid email address">
+ <div class="invalid-feedback">Please enter a valid email address</div>
+ </div>
+ <div class="mb-3">
+ <label for="loginID" class="form-label">Login ID* (Must be unique)</label>
+ <input type="text" id="loginID" name="loginID" class="form-control"
+ placeholder="Enter your login ID" required
+ minlength="4" maxlength="20">
+ <div class="invalid-feedback">Login ID must be 4-20 characters long</div>
+ </div>
+ <div class="mb-3">
+ <label for="password" class="form-label">Password*</label>
+ <input type="password" id="password" name="password" class="form-control"
+ placeholder="Enter your password" required
+ pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,}$"
+ title="Password must be at least 5 characters long and include uppercase, lowercase, and special character">
+ <div class="invalid-feedback">Password must be at least 5 characters with uppercase, lowercase, and special character</div>
+ </div>
+ <div class="d-flex justify-content-center gap-3">
+ <button type="submit" class="btn-submit">Submit</button>
+ <button type="reset" class="btn-cancel">Cancel</button>
+ </div>
+ </form>
+ </div>
+ </div>
+ <footer class="footer">
+    
+    <p>&copy; 2024 eKYC. All rights reserved.</p>
+    <p>Secure • Compliant • Trusted</p>
+</footer>
+
+ <script>
+ // Function to validate date of birth
+ function validateAge(dateString) {
+ const today = new Date();
+ const birthDate = new Date(dateString);
+ let age = today.getFullYear() - birthDate.getFullYear();
+ const monthDiff = today.getMonth() - birthDate.getMonth();
+
+ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+ age--;
+ }
+
+ return age >= 18 && age <= 100;
+ }
+
+ // Function to validate password
+ function validatePassword(password) {
+ const minLength = 5;
+ const hasUpperCase = /[A-Z]/.test(password);
+ const hasLowerCase = /[a-z]/.test(password);
+ const hasSpecialChar = /[!@#$%^&*]/.test(password);
+
+ return password.length >= minLength && hasUpperCase && hasLowerCase && hasSpecialChar;
+ }
+
+ document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+ e.preventDefault();
+
+ // Get form values
+ const formData = {
+ bank: document.getElementById('bank').value,
+ givenName: document.getElementById('givenName').value,
+ dob: document.getElementById('dob').value,
+ email: document.getElementById('email').value,
+ loginID: document.getElementById('loginID').value,
+ password: document.getElementById('password').value
+ };
+
+ // Validate bank selection
+ if (!formData.bank) {
+ alert('Please select a bank');
+ return;
+ }
+
+ // Validate name
+ if (formData.givenName.length < 2 || formData.givenName.length > 20 || !/^[A-Za-z ]{2,20}$/.test(formData.givenName)) {
+ alert('Name must be 2-20 characters long and contain only letters');
+ return;
+ }
+
+ // Validate age
+ if (!validateAge(formData.dob)) {
+ alert('Age must be between 18 and 100 years');
+ return;
+ }
+
+ // Validate email
+ if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(formData.email.toLowerCase())) {
+ alert('Please enter a valid email address');
+ return;
+ }
+
+ // Validate login ID length
+ if (formData.loginID.length < 4 || formData.loginID.length > 20) {
+ alert('Login ID must be 4-20 characters long');
+ return;
+ }
+
+ // Validate password
+ if (!validatePassword(formData.password)) {
+ alert('Password must be at least 5 characters long and include uppercase, lowercase, and special character');
+ return;
+ }
+
+ try {
+ const registerResponse = await fetch('http://localhost:3018/register', {
+ method: 'POST',
+ headers: {
+ 'Content-Type': 'application/json',
+ },
+ body: JSON.stringify(formData)
+ });
+
+ if (registerResponse.ok) {
+ alert('Registration successful! Please go to login page to continue.');
+ document.getElementById('registrationForm').reset();
+ } else {
+ const errorData = await registerResponse.json();
+ if (errorData.error === 'duplicate_login') {
+ alert('Login ID already exists. Please choose a different one.');
+ } else {
+ alert('Registration failed. Please try again.');
+ }
+ }
+ } catch (error) {
+ console.error('Error:', error);
+ alert('An error occurred. Please try again.');
+ }
+ });
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

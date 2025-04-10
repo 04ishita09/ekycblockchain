@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Connected Blockchain Nodes -->
+    <g transform="translate(15, 15)">
+        <!-- Central Hexagon -->
+        <path d="M30 5L38 10V20L30 25L22 20V10L30 5Z" fill="#2952E3" fill-opacity="0.9"/>
+        <!-- Connected Nodes -->
+        <path d="M15 20L23 25V35L15 40L7 35V25L15 20Z" fill="#2546bd" fill-opacity="0.8"/>
+        <path d="M45 20L53 25V35L45 40L37 35V25L45 20Z" fill="#2546bd" fill-opacity="0.8"/>
+        <!-- Connection Lines -->
+        <path d="M23 27L29 22M37 27L31 22" stroke="#2952E3" stroke-width="1"/>
+    </g>
+    <!-- Text -->
+    <text x="80" y="35" font-family="'Poppins'" font-weight="600" font-size="28">
+        <tspan fill="#2952E3">E-</tspan>
+        <tspan fill="white">KYC</tspan>
+    </text>
+    <!-- Tagline -->
+    <text x="85" y="48" font-family="'Poppins'" font-weight="300" font-size="12" fill="white" opacity="0.9">
+        Secure • Compliant • Trusted
+    </text>
+</svg>

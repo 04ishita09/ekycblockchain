@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Status - eKYC2025</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
+   <!--  Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Import KYC CSS -->
+    <link rel="stylesheet" href="index-3b130adc.css">
+    <link type="text/css" rel="stylesheet" href="css2">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg-welcome {
+            background-color: #0f0e13;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .form-control, .form-select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            padding: 0.8rem 1rem;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #2952e3;
+            box-shadow: 0 0 0 0.25rem rgba(41, 82, 227, 0.25);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            padding: 0.8rem 1rem;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 16px 12px;
+        }
+
+        .form-select option {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 0.8rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-select:focus {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: #2952e3;
+            box-shadow: 0 0 0 0.25rem rgba(41, 82, 227, 0.25);
+            outline: none;
+        }
+
+        .btn-submit {
+            background: linear-gradient(90deg, #2952e3 0%, #2546bd 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(90deg, #2546bd 0%, #1a3bad 100%);
+            transform: translateY(-2px);
+        }
+
+        .btn-cancel {
+            background: linear-gradient(90deg, #ff3366 0%, #ff5555 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cancel:hover {
+            background: linear-gradient(90deg, #ff5555 0%, #ff3366 100%);
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, #ffffff 0%, #b3b3b3 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .form-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg-welcome min-vh-100 py-5">
+        <nav class="container mb-4">
+            <div class="text-center">
+                <img src="./assets/logo.svg" alt="eKYC2025 Logo" class="w-40 cursor-pointer">
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h1>Track Application</h1>
+                    <div class="card">
+                        <form id="trackForm">
+                            <div class="mb-4">
+                                <label for="loginID" class="form-label">Login ID*</label>
+                                <input type="text" class="form-control" id="loginID" placeholder="Enter your login ID" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password*</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                            </div>
+                            <div class="d-flex justify-content-center gap-3 mt-4">
+                                <button type="submit" class="btn btn-submit">Track Status</button>
+                                <button type="reset" class="btn btn-cancel">Reset</button>
+                            </div>
+                        </form>
+
+                        <div id="statusInfo" style="display: none;">
+                            <div class="status-card">
+                                <h3 class="status-title">Application Details</h3>
+                                <p><span class="status-label">Name:</span> <span id="userName" class="status-value"></span></p>
+                                <p><span class="status-label">Email:</span> <span id="userEmail" class="status-value"></span></p>
+                                <p><span class="status-label">Bank:</span> <span id="userBank" class="status-value"></span></p>
+                                <p><span class="status-label">Registration Date:</span> <span id="regDate" class="status-value"></span></p>
+                            </div>
+            
+                            <div class="status-card" id="processingStatus">
+                                <h3 class="status-title">Processing Status</h3>
+                                <div id="processingMessage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+       <!-- <footer class="footer">
+            <p>&copy; 2024 eKYC. All rights reserved.</p>
+            <p>Secure • Compliant • Trusted</p>
+        </footer> -->
+    
+
+
+   
+
+   
+   <!-- <script>
+        document.getElementById('trackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const loginID = document.getElementById('loginID').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                 const response = await fetch('http://localhost:3000/track-status', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ loginID, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('statusInfo').style.display = 'block';
+                    document.getElementById('userName').textContent = data.givenName;
+                    document.getElementById('userEmail').textContent = data.emailID;
+                    document.getElementById('userBank').textContent = data.bank;
+                    document.getElementById('regDate').textContent = new Date(data.createdAt).toLocaleDateString();
+
+                    // Processing status based on registration date
+                    const regDate = new Date(data.createdAt);
+                    const twoDaysAgo = new Date();
+                    twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
+
+                    const processingMessage = document.getElementById('processingMessage');
+                    if (regDate < twoDaysAgo) {
+                        processingMessage.textContent = 'Your request is in process. Our team is reviewing your application.';
+                        processingMessage.style.color = '#ffc107';
+                    } else {
+                        processingMessage.textContent = 'Your request will be processed soon. Please check back later.';
+                        processingMessage.style.color = '#6c757d';
+                    }
+                } else {
+                    alert(data.message || 'Invalid credentials');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while checking status');
+            }
+        });
+    </script>-->
+    <script>
+        document.getElementById('trackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const loginID = document.getElementById('loginID').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                //
+                //const response = await fetch('/track-status', {
+                    const response = await fetch('http://localhost:3018/track', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ loginID, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('statusInfo').style.display = 'block';
+                    document.getElementById('userName').textContent = data.givenName;
+                    document.getElementById('userEmail').textContent = data.emailID;
+                    document.getElementById('userBank').textContent = data.bank;
+                    document.getElementById('regDate').textContent = new Date(data.createdAt).toLocaleDateString();
+
+                    // Processing status based on registration date
+                    const regDate = new Date(data.createdAt);
+                    const twoDaysAgo = new Date();
+                    twoDaysAgo.setDate(twoDaysAgo.getDate() - 2);
+
+                    const processingMessage = document.getElementById('processingMessage');
+                    if (regDate < twoDaysAgo) {
+                        processingMessage.textContent = 'Your request is in process. Our team is reviewing your application.';
+                        processingMessage.style.color = '#ffc107';
+                    } else {
+                        processingMessage.textContent = 'Your request will be processed soon. Please check back later.';
+                        processingMessage.style.color = '#6c757d';
+                    }
+                } else {
+                    alert(data.message || 'Invalid credentials');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while checking status');
+            }
+        });
+    </script>
+</body>
+</html>

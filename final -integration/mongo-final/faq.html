@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - eKYC</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .gradient-bg-welcome {
+            background-color: #0f0e13;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+        }
+
+        .header-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .nav-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            display: inline-block;
+        }
+
+        .nav-box a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .nav-box a:hover {
+            background: rgba(41, 82, 227, 0.2);
+            color: #2952e3;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, #ffffff 0%, #b3b3b3 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2952e3;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2952e3;
+        }
+
+        .back-btn {
+            background-color: #2952e3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .back-btn:hover {
+            background-color: #2546bd;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="gradient-bg-welcome min-vh-100 py-5">
+        <div class="container">
+           <div class="header-box">
+                <div class="header-content">
+                    <img src="./assets/logo.svg" alt="eKYC Logo" class="w-40 cursor-pointer mb-4">
+                    <h1 class="mb-0">Frequently Asked Questions</h1>
+                    <div class="divider"></div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="faq-item">
+                            <div class="faq-question">What is eKYC?</div>
+                            <div class="faq-answer">eKYC (Electronic Know Your Customer) is a digital process of identity verification that uses blockchain technology to securely verify and store customer information.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How secure is the eKYC process?</div>
+                            <div class="faq-answer">Our eKYC process is highly secure as it leverages blockchain technology, encryption, and multiple layers of verification to protect your data.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What documents do I need for eKYC?</div>
+                            <div class="faq-answer">You'll need a valid government ID (such as Passport, Driver's License, or National ID) and proof of address (utility bill or bank statement).</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How long does the verification process take?</div>
+                            <div class="faq-answer">The verification process typically takes 5-10 minutes to complete, and you'll receive confirmation within 24 hours.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="nav-links">
+                <a href="kyc.html" class="back-btn">Home</a>
+            </div>
+            <p>&copy; 2024 eKYC. All rights reserved.</p>
+            <p>Secure • Compliant • Trusted</p>
+        </footer>
+    </div>
+</body>
+</html>

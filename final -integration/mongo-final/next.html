@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYC Portal Login</title>
+    <script src="server.js"></script>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .container {
+            background: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            width: 360px;
+            text-align: center;
+            position: relative;
+        }
+
+        .container h1 {
+            font-size: 1.8em;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #2a2a2a;
+            color: #fff;
+            transition: 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #4a90e2;
+            outline: none;
+            box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+        }
+
+        /* Button Styling */
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #4a90e2, #9013fe);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .login-button:hover {
+            background: linear-gradient(90deg, #3a78c2, #7e11d0);
+        }
+
+        /* Links Styling */
+        .links {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .links a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .container h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>KYC Portal Login</h1>
+        <form action="/post" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <label for="bank-account-number">bank-account-number</label>
+                <input type="text" id="bank-account-number" name="bank-account-number" placeholder="Enter your bank-account-number" required>
+            </div>
+            <a href="submission.html"></a>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <div class="links">
+            <a href="#">Register</a> | <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+</body>
+</html>
